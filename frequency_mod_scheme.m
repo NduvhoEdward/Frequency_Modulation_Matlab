@@ -107,3 +107,12 @@ clear; close all;
 
 %%
 
+    n_t = sqrt(0.05)*randn(size(t));
+    y_t = u_t + n_t;
+    plot(t, y_t);
+    grid on;
+
+%%
+
+
+

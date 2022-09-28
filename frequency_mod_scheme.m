@@ -90,6 +90,20 @@ clear; close all;
     plot(t(:,1:length(Q)),Q)
 
 %%
+    cos_angle = acos(u_t);
+    theta = cos_angle - 2*pi*fc*t;
+    m_out = diff(theta);
+    m_out = m_out/T;
+    m_out(end+1)=m_out(end);
+    plot(t,m_out);
+    grid on; 
+    hold on;
+%%
+    m_out = envelope(m_out,10,'rms');
+    plot(t,m_out)
+    grid on;
+    hold off;
+    %xlim([0 0.01])
 
 %%
 
